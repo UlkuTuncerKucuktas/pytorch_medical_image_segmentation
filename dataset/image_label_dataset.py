@@ -32,7 +32,7 @@ class ImageLabelDataset(Dataset):
         img_name = os.path.join(self.image_folder, self.image_files[idx])
         label_name = os.path.join(self.label_folder, self.label_files[idx])
 
-        image = Image.open(img_name).convert('RGB')
+        image = Image.open(img_name).convert('L')
         label = Image.open(label_name).convert('L')
 
         image = np.array(image)

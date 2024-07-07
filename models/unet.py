@@ -108,8 +108,8 @@ class Unet(nn.Module):
         x = self.up4(x, x1)
         x = self.outc(x)
         if self.activation == "sigmoid":
-            x = nn.Sigmoid(x)
+            x = nn.Sigmoid()(x)
         if self.activation == "softmax":
-            x = nn.Softmax(x)
+            x = nn.Softmax()(x)
         return x
 
